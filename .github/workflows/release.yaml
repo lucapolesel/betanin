@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      no-cache:
+        description: 'Disable cache'
+        required: false
+        default: false
+        type: boolean
 jobs:
   release-please:
     name: Run Release Please
